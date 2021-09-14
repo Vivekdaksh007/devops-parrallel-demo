@@ -3,9 +3,25 @@ pipeline
     agent any
     stages
     {
-        stage('SCM checkout')
+        stage('Parraell Demo')
         {
-            {sh echo 'scm downloading'}
+            Parraell
+            {
+                stage('Python script is running')
+                {
+                   steps { sh echo 'Python script' }
+                }
+                stage('Shell Script is running')
+                {
+                   steps { sh echo 'shell script running'}
+                }
+            }
+
+            
+        }
+        stage('This is sequential stage')
+        {
+            steps {sh echo 'shared logs of python and shell script'}
         }
     }
 }
