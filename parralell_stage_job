@@ -5,7 +5,7 @@ pipeline
     {
         stage('Parraell Demo')
         {
-            Parraell
+            parallel
             {
                 stage('Python script is running')
                 {
