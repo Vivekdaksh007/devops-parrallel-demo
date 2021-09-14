@@ -9,11 +9,11 @@ pipeline
             {
                 stage('Python script is running')
                 {
-                   steps { sh echo 'Python script' }
+                   steps { sh 'echo Python script' }
                 }
                 stage('Shell Script is running')
                 {
-                   steps { sh echo 'shell script running'}
+                   steps { sh 'echo shell script running'}
                 }
             }
 
@@ -21,7 +21,7 @@ pipeline
         }
         stage('This is sequential stage')
         {
-            steps {sh echo 'shared logs of python and shell script'}
+            steps {sh 'echo shared logs of python and shell script'}
         }
     }
 }
